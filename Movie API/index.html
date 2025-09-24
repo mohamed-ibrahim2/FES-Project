@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MovieMojo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header">
+    <h1 class="header__title">Movie Mojo</h1>
+    <p class="header__subtitle">Find Your Next Best Movie!</p>
+  </header>
+
+  <main class="main">
+    <section class="controls">
+      <div class="controls__search">
+        <input id="searchInput" class="controls__input" type="search" placeholder="Search movies (e.g. fast, star, inception)" />
+        <button id="searchBtn" class="controls__button">Search</button>
+      </div>
+
+      <div class="controls__filters">
+        <label class="controls__label">
+          Type
+          <select id="typeFilter" class="controls__select">
+            <option value="">All</option>
+            <option value="movie">Movie</option>
+            <option value="series">Series</option>
+            <option value="episode">Episode</option>
+          </select>
+        </label>
+
+        <label class="controls__label">
+          Year From
+          <input id="yearFrom" class="controls__input--small" type="number" min="1900" max="2100" placeholder="1990" />
+        </label>
+
+        <label class="controls__label">
+          Year To
+          <input id="yearTo" class="controls__input--small" type="number" min="1900" max="2100" placeholder="2025" />
+        </label>
+
+        <label class="controls__label">
+          Sort
+          <select id="sortBy" class="controls__select">
+            <option value="newest">Newest</option>
+            <option value="oldest">Oldest</option>
+            <option value="title-asc">Title A→Z</option>
+            <option value="title-desc">Title Z→A</option>
+          </select>
+        </label>
+      </div>
+    </section>
+
+    <section id="results" class="results">
+      <!-- Movie cards will be injected here -->
+    </section>
+
+    <div class="pager">
+      <button id="prevPage" class="pager__btn" disabled>Prev</button>
+      <span id="pageInfo" class="pager__info">Page 1</span>
+      <button id="nextPage" class="pager__btn">Next</button>
+    </div>
+  </main>
+
+  <!-- Modal for details -->
+  <div id="modal" class="modal hidden">
+    <div class="modal__backdrop" id="modalBackdrop"></div>
+    <div class="modal__content" role="dialog" aria-modal="true">
+      <button id="closeModal" class="modal__close">×</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <small>Copyright © Mohamed Ibrahim</small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
